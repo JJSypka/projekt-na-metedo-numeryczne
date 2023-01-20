@@ -1,2 +1,2 @@
 # projekt-na-metedo-numeryczne
-Rozwiązywanie układów równań
+Rozwiązywanie układów równań Ax = B za pomocą macierzy odwrotnej i metody Cholesky'ego. Metoda polega na rozkładzie macierzy A na iloczyn D ·G, obliczeniu macierzy odwrotnej A−1 za pomocą podanego iloczynu i na koniec obliczeniu x ze wzoru A−1 ·B. W tym miejscu warto dodać, że macierzą odwrotną do macierzy dolnie-trójkątnej jest macierz dolnie-trójkątna, a macierzą odwrotną do macierzy górnie-trójkątnej jest macierz górnie-trójkątna. Porównanie tej metody z dwoma innymi metodami rozwiązywania układów równań
