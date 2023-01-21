@@ -1,7 +1,6 @@
 import numpy as np
 import scipy
 import scipy.linalg
-from uklad import Uklad
 
 # #1. Losowanie macierzy A i B
 # 2. Rozklad macierzy A na D*G (teraz L*U)
@@ -9,7 +8,7 @@ from uklad import Uklad
 # 4. Wyznaczyć A^(-1)=D^(-1)* G^(-1)
 # 5. Wyznaczyc X=A^(-1)*B
 class zadanie:
-    def __init__(self, wymiar=10):
+    def __init__(self, wymiar=5):
         self.n = wymiar            # maksymalny wymiar macierzy ukladu
         
     def losuj_macierz_A(self):
