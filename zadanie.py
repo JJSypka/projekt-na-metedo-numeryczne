@@ -7,7 +7,7 @@ import scipy.linalg
 # 3. Wyznaczyć macierze odwrotne do D i G
 # 4. Wyznaczyć A^(-1)=D^(-1)* G^(-1)
 # 5. Wyznaczyc X=A^(-1)*B
-class zadanie:
+class Zadanie:
     def __init__(self, wymiar=5):
         self.n = wymiar            # maksymalny wymiar macierzy ukladu
         

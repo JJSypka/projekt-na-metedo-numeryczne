@@ -1,19 +1,17 @@
-import uklad
 import numpy as np
-from uklad import Uklad
 
-class gauss:
+
+class Gauss:
     
-    def __init__(self, wymiar=10,A=10):
-        self.n = wymiar            # maksymalny wymiar macierzy ukladu
-        self.u = uklad.Uklad(A)                 # uklad do rozwiazania
+    def __init__(self, wymiar = 3 ,A = 3):
+        self.n = wymiar            # maksymalny wymiar macierzy ukladu               # uklad do rozwiazania
         self.X = np.zeros([self.n, 1])               # wektor rozwiazania
         
-    def losuj_macierz_A(self, n=10):
+    def losuj_macierz_A(self, n = 3):
         A = np.random.random([self.n, self.n])
         return A
     
-    def macierz_trojkątna(self,n=10):
+    def macierz_trojkątna(self,n = 3):
         #macierz_trojkatna=Gauss.eliminacja(self)
         #return macierz_trojkatna
         macierz= self.losuj_macierz_A()
@@ -45,10 +43,16 @@ class gauss:
         print(f"Wektor rozwiazania: {self.X[:, 0]}")
         
         
-zad = gauss()
+zad = Gauss()
 print(zad.losuj_macierz_A())
 print("")
 print(zad.macierz_trojkątna())
 zad.rozwiaz_trojkatny()
 print("")
 print(zad.wypisz_rozwiazanie())
+
+# pytania:
+# 1. Czy okay, ze losuje takie macierze?
+# 2. czy na tym to polega? 
+# 3. czy dobrze klasa zadanie?
+# 4. Czy moge porownac do metody Choleskyieg( bo zgrzyt ze te metody dzialaja w podobny sposob)? Bo rozwiazania zawsze sa z zerami itp i czy da sie jakos je wylosowac z lepszymi liczbami?
