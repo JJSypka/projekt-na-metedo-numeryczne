@@ -1,6 +1,5 @@
 import uklad
 import numpy as np
-from gauss import Gauss
 from uklad import Uklad
 
 class gauss:
@@ -44,6 +43,8 @@ class gauss:
     def wypisz_rozwiazanie(self):
         """Metoda wyswietlajaca wektor rozwiazania"""
         print(f"Wektor rozwiazania: {self.X[:, 0]}")
+        
+        
 zad = gauss()
 print(zad.losuj_macierz_A())
 print("")
