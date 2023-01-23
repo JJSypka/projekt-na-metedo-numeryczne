@@ -12,18 +12,12 @@ class Gauss:
         return A
     
     def macierz_trojkątna(self,n = 3):
-        #macierz_trojkatna=Gauss.eliminacja(self)
-        #return macierz_trojkatna
         macierz= self.losuj_macierz_A()
 
         # Applying Gauss Elimination
         for i in range(n):
-            if macierz[i][i] == 0.0:
-                return('Divide by zero detected!')
-            else:
-                   for j in range(i+1,n):
+            for j in range(i+1,n):
                     ratio = macierz[j][i]/macierz[i][i]
-                
                     for k in range(n):
                         macierz[j][k] = macierz[j][k] - ratio * macierz[i][k]
         return macierz
@@ -42,14 +36,6 @@ class Gauss:
         """Metoda wyswietlajaca wektor rozwiazania"""
         print(f"Wektor rozwiazania: {self.X[:, 0]}")
         
-        
-zad = Gauss()
-print(zad.losuj_macierz_A())
-print("")
-print(zad.macierz_trojkątna())
-zad.rozwiaz_trojkatny()
-print("")
-print(zad.wypisz_rozwiazanie())
 
 # pytania:
 # 1. Czy okay, ze losuje takie macierze?
