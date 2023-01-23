@@ -20,38 +20,36 @@ class zadanie:
         return B
     
     def rozkład_A_na_L(self):
-        macierz_A=self.losuj_macierz_A()
-        P,L,U=scipy.linalg.lu(macierz_A)
+        macierz_A = self.losuj_macierz_A()
+        P,L,U = scipy.linalg.lu(macierz_A)
         return L
     
     def rozkład_A_na_U(self):
-        macierz_A=self.losuj_macierz_A()
-        P,L,U=scipy.linalg.lu(macierz_A)
+        macierz_A = self.losuj_macierz_A()
+        P,L,U = scipy.linalg.lu(macierz_A)
         return U
     
     def macierz_odwrotna_do_L(self):
-        macierz_L= self.rozkład_A_na_L()
-        macierz_odwrotna_do_L=np.linalg.inv(macierz_L)
+        macierz_L = self.rozkład_A_na_L()
+        macierz_odwrotna_do_L = np.linalg.inv(macierz_L)
         return macierz_odwrotna_do_L
         
     
     def macierz_odwrotna_do_U(self):
-        macierz_U= self.rozkład_A_na_U()
-        macierz_odwrotna_do_U=np.linalg.inv(macierz_U)
+        macierz_U = self.rozkład_A_na_U()
+        macierz_odwrotna_do_U = np.linalg.inv(macierz_U)
         return macierz_odwrotna_do_U
     
     def oblicz_macierz_odwrotna_do_A(self):
-        macierz_1=self.macierz_odwrotna_do_L()
-        macierz_2=self.macierz_odwrotna_do_U()
-        macierz_odwrotna_A=macierz_1 * macierz_2
+        macierz_1 = self.macierz_odwrotna_do_L()
+        macierz_2 = self.macierz_odwrotna_do_U()
+        macierz_odwrotna_A = macierz_1 * macierz_2
         return macierz_odwrotna_A
     
     def wyznacz_macierz_x(self):
-        macierz_1= self.oblicz_macierz_odwrotna_do_A()
-        macierz_2=self.losuj_macierz_B()
-        macierz_x=macierz_1 * macierz_2
+        macierz_1 = self.oblicz_macierz_odwrotna_do_A()
+        macierz_2 = self.losuj_macierz_B()
+        macierz_x = macierz_1 * macierz_2
         return macierz_x
         
         
-zad = zadanie()
-print(zad.wyznacz_macierz_x())
