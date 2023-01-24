@@ -19,30 +19,30 @@ class Metoda:
         B = np.random.random([self.n, 1])
         return B
     
-    def rozkład_A_na_L(self):
+    def rozkład_A_na_D(self):
         macierz_A = self.losuj_macierz_A()
         P,L,U = scipy.linalg.lu(macierz_A)
         return L
     
-    def rozkład_A_na_U(self):
+    def rozkład_A_na_G(self):
         macierz_A = self.losuj_macierz_A()
         P,L,U = scipy.linalg.lu(macierz_A)
         return U
     
-    def macierz_odwrotna_do_L(self):
-        macierz_L = self.rozkład_A_na_L()
-        macierz_odwrotna_do_L = np.linalg.inv(macierz_L)
-        return macierz_odwrotna_do_L
+    def macierz_odwrotna_do_D(self):
+        macierz_D = self.rozkład_A_na_D()
+        macierz_odwrotna_do_D = np.linalg.inv(macierz_D)
+        return macierz_odwrotna_do_D
         
     
-    def macierz_odwrotna_do_U(self):
-        macierz_U = self.rozkład_A_na_U()
-        macierz_odwrotna_do_U = np.linalg.inv(macierz_U)
-        return macierz_odwrotna_do_U
+    def macierz_odwrotna_do_G(self):
+        macierz_G = self.rozkład_A_na_G()
+        macierz_odwrotna_do_G = np.linalg.inv(macierz_G)
+        return macierz_odwrotna_do_G
     
     def oblicz_macierz_odwrotna_do_A(self):
-        macierz_1 = self.macierz_odwrotna_do_L()
-        macierz_2 = self.macierz_odwrotna_do_U()
+        macierz_1 = self.macierz_odwrotna_do_D()
+        macierz_2 = self.macierz_odwrotna_do_G()
         macierz_odwrotna_A = macierz_1 * macierz_2
         return macierz_odwrotna_A
     
